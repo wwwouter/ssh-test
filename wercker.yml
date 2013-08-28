@@ -8,3 +8,4 @@ build:
     - wouter/script-ssh:
         name: echo test
         code: echo 1
+
