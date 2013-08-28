@@ -8,6 +8,6 @@ build:
     - wouter/script-ssh:
         name: Create source dir
         code: |
-          sudo mkdir -p $SOURCE_DIR
-          sudo chown ubuntu $SOURCE_DIR
+          sudo mkdir -p WERCKER_SOURCE_DIR
+          sudo chown ubuntu WERCKER_SOURCE_DIR
 
