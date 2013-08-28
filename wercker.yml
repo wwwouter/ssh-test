@@ -20,10 +20,14 @@ build:
           ls -al
     - wouter/script-ssh:
         name: docker build
-        code: sudo docker build -t mies/rethinkdb .
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          sudo docker build -t mies/rethinkdb .
     - wouter/script-ssh:
         name: test cluster
-        code: sh test.sh
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          sh test.sh
     - wouter/script-ssh:
         name: docker ps
         code: sudo docker ps -a
