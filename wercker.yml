@@ -7,5 +7,7 @@ build:
         username: ubuntu
     - wouter/script-ssh:
         name: echo test
-        code: echo 1 ; echo 2
+        code: |
+          echo 1
+          echo 2
 
