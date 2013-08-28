@@ -3,7 +3,7 @@ build:
   steps:
     - wouter/setup-ssh:
         private-key: $SSH_KEY
-        host: 54.211.139.67
+        host: ec2-54-221-7-78.compute-1.amazonaws.com
         username: ubuntu
     - wouter/script-ssh:
         name: echo test
