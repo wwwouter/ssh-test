@@ -9,5 +9,5 @@ build:
         name: Create source dir
         code: |
           sudo mkdir -p $SOURCE_DIR
-          chown ubuntu $SOURCE_DIR
+          sudo chown ubuntu $SOURCE_DIR
 
