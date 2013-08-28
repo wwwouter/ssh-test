@@ -1,0 +1,10 @@
+box: wercker/default
+build:
+  steps:
+    - wouter/setup-ssh:
+        private-key: $SSH_KEY
+        host: 54.211.139.67
+        username: ubuntu
+    - wouter/script-ssh:
+        name: echo test
+        code: echo 1
