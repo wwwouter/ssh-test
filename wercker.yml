@@ -6,8 +6,8 @@ build:
         host: ec2-54-221-7-78.compute-1.amazonaws.com
         username: ubuntu
     - wouter/script-ssh:
-        name: echo test
+        name: Create source dir
         code: |
-          echo 1
-          echo 2
+          sudo mkdir -p $SOURCE_DIR
+          chown ubuntu $SOURCE_DIR
 
