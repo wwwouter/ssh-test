@@ -13,7 +13,10 @@ build:
           sudo chown ubuntu $WERCKER_SOURCE_DIR
     - script:
         name: Sync source dir
-        code: rsync -avz --rsh="ssh  -i $WERCKER_SETUP_SSH_ID_FILE -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" "$WERCKER_SOURCE_DIR/" $WERCKER_SETUP_SSH_USERNAME@$WERCKER_SETUP_SSH_HOST:"$WERCKER_SOURCE_DIR/"
+        code: |
+          cat $WERCKER_SETUP_SSH_ID_FILE
+          failz
+          rsync -avz --rsh="ssh  -i $WERCKER_SETUP_SSH_ID_FILE -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" "$WERCKER_SOURCE_DIR/" $WERCKER_SETUP_SSH_USERNAME@$WERCKER_SETUP_SSH_HOST:"$WERCKER_SOURCE_DIR/"
     - wouter/script-ssh:
         name: List source dir
         code: |
